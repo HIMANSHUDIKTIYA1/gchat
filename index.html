@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-Chat App</title>
+    <link rel="icon" type="x-icon" href="Untitled (26).png">
+
+</head>
+<script defer src="http://localhost:${process.env.PORT || 8000}/socket.io/socket.io.js"></script>
+
+   
+
+<script defer src="client.js"></script>
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <nav>
+        <img class="logo" src="Untitled__29_-removebg-preview.png" alt="">
+    </nav>
+       <h1>Welcome to G-Chat App</h1>
+   <div class="container">
+ 
+ <div hidden class="message left"></div>
+<div hidden class="message right"></div>
+
+</div>
+  <div class="send">
+    <form action="#" id="send-container">
+        <input type="text" name="messageInp" id="messageInp">
+        <button  class="btn" type="submit">send</button>
+    </form>
+  </div>
+
+</body>
+</html>

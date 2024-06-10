@@ -1,0 +1,124 @@
+body{
+  
+    background-image: linear-gradient(135deg, black , white);
+}
+.logo{
+    display: block;
+    width: 100px;
+    margin: auto;
+    padding: 10px;
+  
+
+}
+.container{
+  width: 955px;
+background-color: rgba(240, 248, 255, 0.16);
+border-radius: 10px;
+overflow: hidden;
+overflow-y: scroll;
+ 
+   
+ border: 1px solid rgba(255, 0, 0, 0);
+    margin: auto;
+    height:  500px;
+    padding: 10px;
+}
+.message{
+    display: flexbox;
+    background-color: rgba(128, 128, 128, 0.352);
+    border: 1px solid;
+    border-radius: 10px;
+    margin: 10px ;
+  padding: 10px;
+    width: 400px;
+    height: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: large;
+    overflow: hidden;
+    overflow-y: visible;
+   
+
+}
+h1{
+    margin-top: 10px;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+
+}
+.left{
+   float: left;
+  
+   clear: both;
+}
+.right{
+    float: right;
+    
+    clear: both;
+}
+#send-container{
+text-align: center;
+display: block;
+width: 900px;
+margin: auto;
+padding: 10px;
+
+}
+#messageInp{
+    width: 92%;
+    border: 2px solid black;
+    border-radius: 6px;
+    height: 34px;
+}
+.btn{
+    height: 37px;
+    margin: 2px;
+    color: rgb(211, 211, 225);
+     background-color: rgba(0, 0, 255, 0.53); 
+     border-radius: 5px;
+     font-size: large;
+   
+}
+
+.btn:hover{
+    background-color: chocolate;
+
+}
+@media screen and (max-width: 440px) {
+    .container{
+          width:auto ;
+          height: 500px;
+    }
+    #send-container{
+        text-align: center;
+        display: flex;
+        width: 300px;
+        margin: 10px;
+        padding: 10px;
+        
+        }
+        body{
+          
+            height: auto;
+        }
+        .btn{
+           
+            width: auto;
+        }
+        .btn:hover{
+            background-color: orange;
+        }
+        .message{
+            display: flexbox;
+            background-color: grey;
+            border: 1px solid;
+            border-radius: 10px;
+            margin: 10px ;
+          padding: 10px;
+            width: 300px;
+            height: 25px;
+           
+        
+        }
+}
