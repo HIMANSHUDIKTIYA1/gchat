@@ -1,27 +1,38 @@
-//node server 
 require('dotenv').config();
-const io= require('socket.io')(process.env.PORT || 8000, {
-    cors:{
+const http = require('http');
+const socketIo = require('socket.io');
+
+const PORT =process.env.PORT ;
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end('Server is running');
+});
+
+const io = socketIo(server, {
+    cors: {
         origin: "*"
     }
 });
 
 const users = {};
 
-
-io.on('connection', socket =>{
-    socket.on('new-user-joined', name =>{
+io.on('connection', socket => {
+    socket.on('new-user-joined', name => {
         console.log("New user", name);
         users[socket.id] = name;
         socket.broadcast.emit('user-joined', name);
-
     });
 
-    socket.on('send', message =>{
-        socket.broadcast.emit(`receive`, {message: message, name: users[socket.id]})
+    socket.on('send', message => {
+        socket.broadcast.emit('receive', { message: message, name: users[socket.id] });
     });
-    socket.on('disconnect', message =>{
-        socket.broadcast.emit(`left`, users[socket.id])
+
+    socket.on('disconnect', () => {
+        socket.broadcast.emit('left', users[socket.id]);
         delete users[socket.id];
     });
+});
+
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
